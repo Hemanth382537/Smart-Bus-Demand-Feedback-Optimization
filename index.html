@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Bus Demand & Feedback Optimization System for Government Public Transport.">
+    <title>Smart Bus Demand</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <header>
+        <nav class="navbar glass">
+            <div class="logo">
+                <span class="logo-icon">🚌</span>
+                <h1>Smart Bus <span>Demand</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#routes">Routes & Demand</a></li>
+                <li><a href="#feedback">Passenger Feedback</a></li>
+            </ul>
+            <a href="#feedback" class="cta-button primary">Report Issue</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Smart Bus Demand & <span>Feedback Optimization</span></h2>
+                <p class="hero-subtitle">A real-world AI solution for Andhra Pradesh. Balancing rural connectivity, managing free-travel scheme crowding, and optimizing fuel efficiency across 11,000+ buses.</p>
+                <div class="hero-actions">
+                    <a href="#dashboard" class="btn primary">View Live Dashboard</a>
+                    <a href="#features" class="btn secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper glass">
+                <img src="assets/modern_gov_bus.png" alt="Modern Government Electric Bus" class="hero-image" id="heroImage">
+            </div>
+        </section>
+
+        <section id="dashboard" class="dashboard-section">
+            <div class="section-header">
+                <h2>Real-Time Insights</h2>
+                <p>Live metrics from the bus network</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card glass">
+                    <div class="metric-icon alert">⚠️</div>
+                    <h3>Overcrowded Routes</h3>
+                    <div class="metric-value">42</div>
+                    <p>Primarily "Free-Travel" peak hours</p>
+                </div>
+                <div class="metric-card glass">
+                    <div class="metric-icon success">🍃</div>
+                    <h3>Empty Palle Velugu Runs</h3>
+                    <div class="metric-value">18</div>
+                    <p>Fuel wastage detected in rural segments</p>
+                </div>
+                <div class="metric-card glass">
+                    <div class="metric-icon info">🎫</div>
+                    <h3>Zero-Ticket Demand</h3>
+                    <div class="metric-value" id="feedbackCount">1.2M</div>
+                    <p>Women passengers tracked today</p>
+                </div>
+                <div class="metric-card glass">
+                    <div class="metric-icon savings">💰</div>
+                    <h3>Est. Fuel Saved</h3>
+                    <div class="metric-value">4,500 L</div>
+                    <p>This month via route optimization</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="routes" class="routes-section glass">
+            <div class="section-header">
+                <h2>Route Optimization Intelligence</h2>
+            </div>
+            <div class="routes-container">
+                <div class="route-list" id="routeList">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="route-details" id="routeDetails">
+                    <h3>Select a route to view details</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback" class="feedback-section">
+            <div class="glass form-container">
+                <h2>Passenger Feedback Portal</h2>
+                <p>Help us improve your travel experience.</p>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="busRoute">Bus Route Number (e.g., 218)</label>
+                        <input type="text" id="busRoute" required placeholder="Enter route number">
+                    </div>
+                    <div class="form-group">
+                        <label for="issueType">Type of Feedback</label>
+                        <select id="issueType" required>
+                            <option value="">Select an option...</option>
+                            <option value="overcrowded">Bus is Overcrowded</option>
+                            <option value="late">Bus is Late</option>
+                            <option value="empty">Bus is Running Empty</option>
+                            <option value="condition">Poor Bus Condition</option>
+                            <option value="suggestion">General Suggestion</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Additional Details</label>
+                        <textarea id="comments" rows="4" required placeholder="Provide more information..."></textarea>
+                    </div>
+                    <button type="submit" class="btn primary full-width">Submit Feedback</button>
+                </form>
+                <div id="formSuccess" class="success-message hidden">
+                    ✅ Thank you! Your feedback has been recorded and sent to transport authorities.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass">
+        <p>&copy; 2026 Smart Bus Demand. A tech initiative for Andhra Pradesh.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
